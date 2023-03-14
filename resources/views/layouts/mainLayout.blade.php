@@ -6,11 +6,23 @@
 
         @vite('resources/js/app.js')
 
-        <title>Laravel</title>
+        <title>@yield('page_name') Laravel-dc-comics</title>
 
         
     </head>
-    <body >
+    <body>
+
+        <header>
+            HEADER
+        </header>
+
+        <main>
+            @yield('page_content')
+        </main>
+
+        <footer>
+            FOOTER
+        </footer>
         
     </body>
 </html>
