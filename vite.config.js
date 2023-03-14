@@ -10,10 +10,10 @@ export default defineConfig({
             ],
             refresh: true
         }),
-        resolve: {
-            alias: {
-                '~resources': '/resources/',
-            }
-        },
     ],
+    resolve: {
+        alias: {
+            '~resources': '/resources/',
+        }
+    },
 });
