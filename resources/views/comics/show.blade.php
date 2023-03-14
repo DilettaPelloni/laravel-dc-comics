@@ -16,7 +16,6 @@
                     <p>{{ $comic->sale_date }}</p>
                     <a href="{{ route('comics.index') }}">Torna alla home</a>
                 </div>
-            
 
         </div>
     </div>
