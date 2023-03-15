@@ -44,7 +44,7 @@
                                 href="{{ route('comics.edit', $comic->id) }}"
                                 class="btn btn-secondary"
                             >
-                            <i class="fa-solid fa-pencil"></i>
+                                <i class="fa-solid fa-pencil"></i>
                             </a>
                             <form
                                 action="{{ route('comics.destroy', $comic->id) }}"
