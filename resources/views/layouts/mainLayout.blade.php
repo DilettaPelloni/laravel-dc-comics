@@ -18,16 +18,12 @@
     </head>
     <body>
 
-        <header>
-            HEADER
-        </header>
+        @include('partials.header')
 
-        <main>
+        <main
+            class="py-5"
+        >
             @yield('page_content')
         </main>
-
-        <footer>
-            FOOTER
-        </footer>
     </body>
 </html>
