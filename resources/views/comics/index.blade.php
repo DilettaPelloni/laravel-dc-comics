@@ -13,7 +13,11 @@
                     <p>{{ $comic->price }}</p>
                     <p>{{ $comic->type }}</p>
                     <a href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
-                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    <form
+                        action="{{ route('comics.destroy', $comic->id) }}"
+                        method="POST"
+                        onsubmit="confirmDelete()"
+                    >
                         @csrf
                         @method('DELETE')
                         <button type="submit">Elimina</button>

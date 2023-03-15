@@ -6,6 +6,12 @@
 
         @vite('resources/js/app.js')
 
+        <script>
+            function confirmDelete () {
+                confirm("Vuoi procedere con l'eliminazione?");
+            }
+        </script>
+
         <title>@yield('page_name') Laravel-dc-comics</title>
 
         
@@ -23,6 +29,5 @@
         <footer>
             FOOTER
         </footer>
-        
     </body>
 </html>
