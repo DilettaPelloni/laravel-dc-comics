@@ -110,4 +110,12 @@ class ComicController extends Controller
         return redirect()->route('comics.index');
 
     }
+
+    public function confirm($id)
+    {
+        $comic = Comic::findOrFail($id);
+        return view('comics.confirm', [
+            'comic'=> $comic,
+        ]);
+    }
 }

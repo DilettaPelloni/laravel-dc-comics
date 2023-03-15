@@ -4,9 +4,10 @@
 
 @section('page_content')
     <div class="container">
-        <h2 class="mb-5 text-center">
-            {{ $comic->title }}
+        <h2 class="py-3 bg-danger text-light text-center">
+            Vuoi procedere con l'eliminazione di questo elemento?
         </h2>
+
         <div class="row">
             <div class="col-6 text-center">
                 <img
@@ -16,27 +17,6 @@
                 >
             </div>
             <div class="col-6">
-                
-                <a
-                    href="{{ route('comics.edit', $comic->id) }}"
-                    class="btn btn-secondary"
-                >
-                    <i class="fa-solid fa-pencil"></i>
-                </a>
-                <a
-                    href="{{ route('comics.index') }}"
-                    class="btn btn-warning text-light"
-                >
-                    <i class="fa-solid fa-rotate-left"></i>
-                </a>
-                <a
-                    href="{{ route('comics.confirm', $comic->id) }}"
-                    class="btn btn-danger"
-                >
-                    <i class="fa-solid fa-trash-can"></i>
-                </a>
-            </form>
-
                 <ul class="list-group mt-3">
                     <li class="list-group-item">
                         <strong>Tipologia: </strong>{{ $comic->type }}
@@ -56,6 +36,29 @@
                     </li>
                   </ul>
             </div>
+        </div>
+        <div class="mt-5 text-center">
+            <a
+                href="{{ route('comics.index') }}"
+                class="btn btn-success"
+            >
+                No, annulla l'operazione
+            </a>
+            <form
+                action="{{ route('comics.destroy', $comic->id) }}"
+                method="POST"
+                onsubmit="confirmDelete()"
+                class="d-inline"
+            >
+                @csrf
+                @method('DELETE')
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                >
+                    Si, voglio procedere
+                </button>
+            </form>
         </div>
     </div>
 @endsection

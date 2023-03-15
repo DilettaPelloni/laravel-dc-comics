@@ -18,4 +18,6 @@ Route::get('/', function () {
     return redirect()->route('comics.index');
 });
 
+Route::get('/comics/{id}/confirm', [ComicController::class, 'confirm'])->name('comics.confirm');
+
 Route::resource('comics', ComicController::class);

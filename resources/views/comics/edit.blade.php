@@ -36,9 +36,7 @@
                     id="description"
                     name="description"
                     placeholder="Inserisci una descrizione..."
-                >
-                    {{ $comic->description }}
-                </textarea>
+                >{{ $comic->description }}</textarea>
             </div>
         </div>
         <div class="row mb-3">

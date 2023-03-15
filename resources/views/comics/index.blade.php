@@ -46,21 +46,12 @@
                             >
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
-                            <form
-                                action="{{ route('comics.destroy', $comic->id) }}"
-                                method="POST"
-                                onsubmit="confirmDelete()"
-                                class="d-inline"
+                            <a
+                                href="{{ route('comics.confirm', $comic->id) }}"
+                                class="btn btn-danger"
                             >
-                                @csrf
-                                @method('DELETE')
-                                <button
-                                    type="submit"
-                                    class="btn btn-danger"
-                                >
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </form>
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
