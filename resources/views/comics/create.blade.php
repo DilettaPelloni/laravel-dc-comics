@@ -59,6 +59,7 @@
                     id="price"
                     name="price"
                     required
+                    min="0.01"
                     placeholder="0,00"
                 >
             </div>
