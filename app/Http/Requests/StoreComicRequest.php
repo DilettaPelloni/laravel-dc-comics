@@ -29,7 +29,7 @@ class StoreComicRequest extends FormRequest
             'title'=> 'required|max:255',
             'thumb'=> 'nullable|max:255|url',
             'description'=> 'nullable|max:30000',
-            'price'=> 'numeric|min:0.1|max:9999.99',
+            'price'=> 'required|numeric|min:0.1|max:9999.99',
             'series'=> 'required|max:255',
             'sale_date'=> 'required|date',
             'type'=> [
