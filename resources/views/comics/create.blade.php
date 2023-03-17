@@ -18,7 +18,8 @@
                     class="form-control @error ('title') is-invalid @enderror"
                     id="title"
                     name="title"
-                    {{-- required --}}
+                    value="{{ old('title') }}"
+                    required
                     maxlength="255"
                     placeholder="Inserisci il titolo..."
                 >
@@ -35,6 +36,7 @@
                     class="form-control @error ('thumb') is-invalid @enderror"
                     id="thumb"
                     name="thumb"
+                    value="{{ old('thumb') }}"
                     maxlength="255"
                     placeholder="Inserisci il link..."
                 >
@@ -52,7 +54,7 @@
                     name="description"
                     rows="6"
                     placeholder="Inserisci una descrizione..."
-                ></textarea>
+                >{{ old('description') }}</textarea>
                 @error('description')
                     <span class="d-block mt-2 text-danger">{{ $message }}</span>
                 @enderror
@@ -67,7 +69,8 @@
                     step=0.01
                     id="price"
                     name="price"
-                    {{-- required --}}
+                    value="{{ old('price') }}"
+                    required
                     min="0.01"
                     placeholder="0,00"
                 >
@@ -84,7 +87,8 @@
                     class="form-control @error ('series') is-invalid @enderror"
                     id="series"
                     name="series"
-                    {{-- required --}}
+                    value="{{ old('series') }}"
+                    required
                     maxlength="255"
                     placeholder="Inserisci il nome della serie..."
                 >
@@ -101,7 +105,8 @@
                     class="form-control @error ('sale_date') is-invalid @enderror"
                     id="sale_date"
                     name="sale_date"
-                    {{-- required --}}
+                    value="{{ old('sale_date') }}"
+                    required
                 >
                 @error('sale_date')
                     <span class="d-block mt-2 text-danger">{{ $message }}</span>
@@ -115,11 +120,11 @@
                     id="type"
                     class="form-select @error ('sale_date') is-invalid @enderror"
                     name="type"
-                    {{-- required --}}
+                    required
                 >
-                    <option selected disabled>Seleziona una tipologia</option>
-                    <option value="comic book">Comic book</option>
-                    <option value="graphic novel">Graphic novel</option>
+                    <option {{ (old('type')) ? 'selected' : '' }} selected disabled>Seleziona una tipologia</option>
+                    <option {{ (old('type') == 'comic book') ? 'selected' : '' }} value="comic book">Comic book</option>
+                    <option {{ (old('type') == 'graphic novel') ? 'selected' : '' }} value="graphic novel">Graphic novel</option>
                 </select>
                 @error('type')
                     <span class="d-block mt-2 text-danger">{{ $message }}</span>
