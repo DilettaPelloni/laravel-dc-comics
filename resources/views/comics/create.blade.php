@@ -15,13 +15,16 @@
             <div class="col-10">
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error ('title') is-invalid @enderror"
                     id="title"
                     name="title"
-                    required
+                    {{-- required --}}
                     maxlength="255"
                     placeholder="Inserisci il titolo..."
                 >
+                @error('title')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
@@ -29,12 +32,15 @@
             <div class="col-10">
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error ('thumb') is-invalid @enderror"
                     id="thumb"
                     name="thumb"
                     maxlength="255"
                     placeholder="Inserisci il link..."
                 >
+                @error('thumb')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
@@ -42,11 +48,14 @@
             <div class="col-10">
                 <textarea
                     id="description"
-                    class="form-control"
+                    class="form-control @error ('description') is-invalid @enderror"
                     name="description"
                     rows="6"
                     placeholder="Inserisci una descrizione..."
                 ></textarea>
+                @error('description')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
@@ -54,14 +63,17 @@
             <div class="col-10">
                 <input
                     type=number
-                    class="form-control"
+                    class="form-control @error ('price') is-invalid @enderror"
                     step=0.01
                     id="price"
                     name="price"
-                    required
+                    {{-- required --}}
                     min="0.01"
                     placeholder="0,00"
                 >
+                @error('price')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
@@ -69,13 +81,16 @@
             <div class="col-10">
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error ('series') is-invalid @enderror"
                     id="series"
                     name="series"
-                    required
+                    {{-- required --}}
                     maxlength="255"
                     placeholder="Inserisci il nome della serie..."
                 >
+                @error('series')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
@@ -83,21 +98,32 @@
             <div class="col-10">
                 <input
                     type="date"
-                    class="form-control"
+                    class="form-control @error ('sale_date') is-invalid @enderror"
                     id="sale_date"
                     name="sale_date"
-                    required
+                    {{-- required --}}
                 >
+                @error('sale_date')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
         <div class="row mb-3">
             <label for="type" class="col-2 col-form-label fw-bold">Tipologia*</label>
             <div class="col-10">
-                <select id="type" class="form-select" name="type" required>
+                <select
+                    id="type"
+                    class="form-select @error ('sale_date') is-invalid @enderror"
+                    name="type"
+                    {{-- required --}}
+                >
                     <option selected disabled>Seleziona una tipologia</option>
                     <option value="comic book">Comic book</option>
                     <option value="graphic novel">Graphic novel</option>
                 </select>
+                @error('type')
+                    <span class="d-block mt-2 text-danger">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
